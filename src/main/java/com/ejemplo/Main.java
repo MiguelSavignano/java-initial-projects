@@ -6,17 +6,20 @@ import java.sql.SQLException;
 
 public class Main {
   public static void main(String[] args) {
-    String url = "jdbc:mysql://aws.connect.psdb.cloud:3306/test_database";
-    String usuario = "user";
-    String contraseña = "password";
 
-    try {
-      Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
-      System.out.println("✅ Conexión exitosa");
-      conexion.close();
-    } catch (SQLException e) {
-      System.out.println("❌ No se pudo conectar");
-      e.printStackTrace();
-    }
+    // URL original
+    String urlFull = "https://sdkman.io/install#windows-installation";
+
+    // Generar URL corta
+    String urlShort = UrlShortener.generateRandomShortUrl();
+
+    // Crear un objeto Url
+    Url url = new Url(urlFull, urlShort);
+
+    // Imprimir la URL completa y la URL corta
+    System.out.println("Full URL: " + url.getUrl());
+    System.out.println("Short URL: " + url.getUrl_short());
   }
 }
+
+
