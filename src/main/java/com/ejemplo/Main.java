@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class Main {
   public static void main(String[] args) {
-    String url = "jdbc:mysql://localhost:3306/tu_base";
-    String usuario = "root";
+    String url = "jdbc:mysql://aws.connect.psdb.cloud:3306/test_database";
+    String usuario = "user";
     String contraseña = "password";
 
     try {
