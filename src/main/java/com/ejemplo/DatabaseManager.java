@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DatabaseManager {
+public class DatabaseManager implements Almacenamiento {
   private static final String URL = "jdbc:sqlite:/app/my_database.db";
 
   public static void initializeDatabase() {
