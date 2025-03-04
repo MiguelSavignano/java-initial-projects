@@ -1,8 +1,8 @@
 package com.ejemplo;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+// import java.sql.Connection;
+// import java.sql.DriverManager;
+// import java.sql.SQLException;
 
 public class Main {
   public static void main(String[] args) {
@@ -21,5 +21,3 @@ public class Main {
     System.out.println("Short URL: " + url.getUrl_short());
   }
 }
-
-
