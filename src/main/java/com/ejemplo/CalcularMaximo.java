@@ -2,7 +2,7 @@ package com.ejemplo;
 
 public class CalcularMaximo {
 
-    public static void main(String[] args) {
+    public static void run() {
         // Declarar el arreglo de números
         int[] numeros = {1, 3, 6, 8, 0, 8};
 
