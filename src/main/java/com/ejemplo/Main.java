@@ -18,6 +18,5 @@ public class Main {
       System.out.println("opcion 2");
       BuscarDuplicados.run();
     }
-
   }
 }
