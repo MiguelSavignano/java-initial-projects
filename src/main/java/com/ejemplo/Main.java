@@ -14,9 +14,26 @@ public class Main {
     if ("1".equals(opcion)) {
       CalcularMedia.run();
       System.out.println("opcion 1");
+
     } else if ("2".equals(opcion)) { 
       System.out.println("opcion 2");
       BuscarDuplicados.run();
+      
+    } else if ("3".equals(opcion)) { 
+      System.out.println("opcion 3"); 
+      Sumar.run();
+      
+    } else if ("4".equals(opcion)) { 
+      System.out.println("opcion 4");
+      BuscarDuplicados.run();
+      
+    } else if ("5".equals(opcion)) { 
+      System.out.println("opcion 5");
+      BuscarDuplicados.run();
+      
     }
+
+
   }
+
 }
