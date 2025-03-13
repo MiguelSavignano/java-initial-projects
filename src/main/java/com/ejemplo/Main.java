@@ -21,7 +21,9 @@ public class Main {
       
     } else if ("3".equals(opcion)) { 
       System.out.println("opcion 3"); 
-      Sumar.run();
+      int numero1 = leer.nextInt();
+      int numero2 = leer.nextInt();
+      Sumar.run(numero1, numero2);
       
     } else if ("4".equals(opcion)) { 
       System.out.println("opcion 4");
