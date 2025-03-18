@@ -20,7 +20,23 @@ public class Main {
       int numero1 = leer.nextInt();
         System.out.println("operacion sumar"); 
         resultado = Sumar.run(resultado, numero1);
-      }
+
+      }else if ("resta".equals(operacion)) {
+        System.out.println("numero: ");
+        int numero1 = leer.nextInt();
+        System.out.println("operacion Restar");
+        resultado = Restar.run(resultado, numero1);
+
+      }else if ("multiplicar".equals(operacion)) {
+        System.out.println("numero: ");
+        int numero1 = leer.nextInt();
+        System.out.println("operacion Multiplicar");
+      resultado = Multiplicar.run(resultado, numero1);
+     } else if ("multiplicar".equals(operacion)) {
+      System.out.println("numero: ");
+      int numero1 = leer.nextInt();
+      System.out.println("operacion Multiplicar");
+    resultado = Multiplicar.run(resultado, numero1);
     }
   }
 
