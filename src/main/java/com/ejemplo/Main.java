@@ -4,41 +4,31 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner leer = new Scanner(System.in);
-    String operacion= "";
-    int resultado = 0;
-    while (true) {
+    System.out.println("hola mundo");
+
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Introduce un número entero: ");
+    int numeroEntero = scanner.nextInt();
+    System.out.println("Has introducido: " + numeroEntero);
+
+    int numeroAleatorio = (int) (Math.random() * 11);
+
+    // Imprime el número aleatorio
+    System.out.println("El número aleatorio es: " + numeroAleatorio);
+
+    if(numeroEntero == numeroAleatorio) {
+      System.out.println("Ganaste");
       
-
-      System.out.println("Que operacion quieres hacer? +,*");
-      operacion = leer.next();
-      System.out.println(operacion); 
-
-
-      if ("+".equals(operacion)) {
-        System.out.println("numero: ");
-      int numero1 = leer.nextInt();
-        System.out.println("operacion sumar"); 
-        resultado = Sumar.run(resultado, numero1);
-
-      }else if ("resta".equals(operacion)) {
-        System.out.println("numero: ");
-        int numero1 = leer.nextInt();
-        System.out.println("operacion Restar");
-        resultado = Restar.run(resultado, numero1);
-
-      }else if ("multiplicar".equals(operacion)) {
-        System.out.println("numero: ");
-        int numero1 = leer.nextInt();
-        System.out.println("operacion Multiplicar");
-      resultado = Multiplicar.run(resultado, numero1);
-     } else if ("/".equals(operacion)) {
-      System.out.println("numero: ");
-      int numero1 = leer.nextInt();
-      System.out.println("/");
-    resultado = Dividir.run(resultado, numero1);
-     }
+    }else{
+      System.out.println("Perdiste");
     }
-  }
 
-}
+
+
+
+
+
+
+  }
+}    
