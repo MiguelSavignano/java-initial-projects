@@ -5,38 +5,49 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     System.out.println("¡Bienvenido al juego de adivinar el número!");
-    int numeroAleatorio = (int) (Math.random() * 11);
     Scanner scanner = new Scanner(System.in);
-    boolean adivinado = false;
-    int intentos = 0;
-    int puntuacion = 0;
 
-    while (!adivinado) {
-      System.out.print("Introduce un número entero entre 0 y 10: ");
+    System.out.print("Introduce el número de jugadores (1-4): ");
+    int numeroJugadores = scanner.nextInt();
+    while (numeroJugadores < 1 || numeroJugadores > 4) {
+      System.out.print("Número inválido. Introduce un número entre 1 y 4: ");
+      numeroJugadores = scanner.nextInt();
+    }
+
+    int[] puntuaciones = new int[numeroJugadores];
+    int numeroAleatorio = (int) (Math.random() * 11); // Número aleatorio único para todos los jugadores
+    boolean juegoTerminado = false;
+
+    int jugadorActual = 1; // Comenzar con el jugador 1
+
+    while (!juegoTerminado) {
+      System.out.println(String.format("\nTurno del jugador %d (Jugador %d)", jugadorActual, jugadorActual));
+      System.out.print(String.format("Jugador %d, introduce un número entero entre 0 y 10: ", jugadorActual));
       int numeroEntero = scanner.nextInt();
-      intentos++;
-      System.out.println("Has introducido: " + numeroEntero);
+      System.out.println(String.format("Jugador %d ha introducido: %d", jugadorActual, numeroEntero));
 
       if (numeroEntero == numeroAleatorio) {
-        System.out.println("¡Ganaste! Adivinaste el número.");
-        adivinado = true;
+        System.out.println(String.format("¡Jugador %d ganó! Adivinaste el número.", jugadorActual));
 
         // Asignar puntuación según los intentos
-        if (intentos == 1) {
-          puntuacion = 100;
-        } else if (intentos == 2) {
-          puntuacion = 80;
-        } else if (intentos == 3) {
-          puntuacion = 60;
-        } else {
-          puntuacion = 40;
-        }
+        puntuaciones[jugadorActual - 1] = 100; // Ganador obtiene 100 puntos
+        juegoTerminado = true; // Terminar el juego
       } else {
-        System.out.println("Incorrecto. Intenta de nuevo.");
+        System.out.println(String.format("Jugador %d, incorrecto. Intenta de nuevo en tu próximo turno.", jugadorActual));
+      }
+
+      // Pasar al siguiente jugador
+      jugadorActual++;
+      if (jugadorActual > numeroJugadores) {
+        jugadorActual = 1; // Volver al jugador 1 si se supera el número de jugadores
       }
     }
 
-    System.out.println("Tu puntuación final es: " + puntuacion);
+    System.out.println("\nPuntuaciones finales:");
+    for (int jugador = 1; jugador <= numeroJugadores; jugador++) {
+      System.out.println(String.format("Jugador %d: %d", jugador, puntuaciones[jugador - 1]));
+    }
+
     System.out.println("Gracias por jugar. ¡Hasta la próxima!");
     scanner.close();
   }
